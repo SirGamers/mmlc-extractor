@@ -5,7 +5,7 @@ Based on anpage's script: https://gist.github.com/anpage/b895a34efb0bf1e4a9a4f52
 
 ## How to use
 * Make sure the latest version of Python 3 is installed at https://python.org.
-* Place one of the scripts in the same directory as the MMLC/DAC executable.
+* Place one of the scripts in the same directory as the MMLC executable.
   * **IMPORTANT:** Make sure that the game you extracting the ROMs from is fully updated.
   * For good measure, verify the integrity of the game via Steam.
 * Run the script (in most cases, you should be able to double-click it to run it).
