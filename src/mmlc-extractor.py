@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# Mega Man Legacy Collection Extractor v1.3.0
-# By HTV04
+# Mega Man Legacy Collection Extractor v2.0.0
+# By SirGamers
 
 # IMPORTANT: This script is currently only compatible with v1.1.1.29 of the Windows version of the game
 
@@ -26,26 +26,18 @@ OFFSETS = [
 ]
 
 if __name__ == '__main__':
-    f = open("Proteus.exe", "rb")
-    try:
+    with open("Proteus.exe", "rb") as f:
         exe = f.read()
-    finally:
-        f.close()
 
-    for i, game in enumerate(HEADERS):
+    for i, game_header in enumerate(HEADERS):
+        rom_data = game_header
+
         for section in ['PRG', 'CHA']:
             if OFFSETS[i][section]:
-                start = OFFSETS[i][section][0]
-                size = OFFSETS[i][section][1]
+                start, size = OFFSETS[i][section]
                 end = start + size
-                game += exe[start:end]
-        
-        if i == 0:
-            out = open("Mega Man (Mega Man Legacy Collection).nes", "wb")
-        else:  
-            out = open("Mega Man " + str(i + 1) + "(Mega Man Legacy Collection).nes", "wb")
-        
-        try:
-            out.write(game)
-        finally:
-            out.close()
+                rom_data += exe[start:end]
+
+        rom_filename = f"Mega Man {i + 1} (Mega Man Legacy Collection).nes"
+        with open(rom_filename, "wb") as out:
+            out.write(rom_data)
