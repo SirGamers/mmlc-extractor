@@ -1,4 +1,5 @@
 # MMLC Extractor
+I'm never gonna update this so it's archived
 Extracts NES ROMs from the Mega Man Legacy Collection.
 
 Based on anpage's script: https://gist.github.com/anpage/b895a34efb0bf1e4a9a4f52228067fa8
@@ -21,5 +22,5 @@ No, the ROMs included with the MMLC are modified (except for the Rockman ROMs), 
 
 **Beware that applying the patches directly without making backups will overwrite the original ROMs!**
 
-### An update released for the MMLC and the script doesn't output valid ROMs anymore!
-This is probably due to the offsets for the ROMs shifting. Create an issue and I'll try to fix it.
+### An update was released for MMLC and the script doesn't output valid ROMs anymore!
+This is probably due to the offsets for the ROMs shifting. sucks to be you, I'm not working on this anymore
